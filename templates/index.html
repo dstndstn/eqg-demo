@@ -1,0 +1,36 @@
+<html>
+  <body>
+    
+<center>
+  
+<h3>Encyclopedia of Quantum Geometries</h3>
+
+<table border="1">
+  <tr>
+    <th>Name</th>
+  </tr>
+  
+  {% for ds in datasets %}
+  <tr><td>{{ ds.name }}</td></tr>
+  {% endfor %}
+</table>
+
+<br/><br/>
+<hr />
+<br/><br/>
+
+Submit a new dataset:
+<br/>
+<br/>
+<form action="new_dataset" method="post">
+  {% csrf_token %}
+  Name: <input type="text" name="name">
+  <br/>
+  <br/>
+  <input type="submit" value="Submit">
+</form>
+
+
+</center>
+  </body>
+</html>
